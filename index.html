@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+        <html>
+        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+                  
+        <body style='margin : 0px; overflow: hidden;'>
+                  <a-scene cursor="rayOrigin: mouse" embedded arjs="sourceType: webcam; debugUIEnabled: false">
+                      <a-marker preset="hiro">
+                            <a-text value="Wei Li" position='-0.5 0 0' rotation='-90 0 0' color= 'pink'></a-text>
+                            <a-box id='box' position='0.5 0 0' material='color: blue;' scale='0.5 0.5 0.5'
+                             event-set__mouseenter="color: red"
+                             event-set__mouseleave="color: white"></a-box>
+                            <a-cylinder position="0 1 0" material='color: red;' scale='0.1 0.1 0.1'
+                             event-set__mousedown="scale: 0.5 0.5 0.5"
+                             event-set__mouseup="scale: 0.1 0.1 0.1"></a-cylinder>
+                            <a-plane position='0 0 -0.5' rotation='-90 0 0 ' material='color: green' scale='0.5 0.5 0.5' 
+                             event-set__mousedown="opacity: 1"
+                             event-set__mouseup="opacity:0" >
+                              </a-plane>
+                        
+                      </a-marker>
+                      <a-entity camera></a-entity>
+                    </a-scene>
+                  </body>
+                </html>
+    
+</body>
+</html>
